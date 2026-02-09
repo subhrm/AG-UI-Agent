@@ -2,6 +2,10 @@
 
 A Python-based AI agent built with LangGraph that uses OpenAI's API and web search capabilities to answer user questions. The agent implements the [AG-UI (Agent-User Interaction) protocol](https://ag-ui.com) for standardized communication with frontend applications.
 
+**Two Server Options:**
+- **server.py** - Custom AG-UI implementation with Server-Sent Events
+- **server_sdk.py** - Official `ag-ui-langgraph` SDK integration
+
 ## Features
 
 - 🤖 **LangGraph Agent**: Sophisticated agent workflow with tool execution
@@ -62,6 +66,12 @@ The agent follows a LangGraph workflow:
 
 ### Starting the Server
 
+**Option 1: Using AG-UI SDK (Recommended)**
+```bash
+uv run uvicorn src.ag_ui_agent.server_sdk:app --reload
+```
+
+**Option 2: Custom Implementation**
 ```bash
 uv run uvicorn src.ag_ui_agent.server:app --reload
 ```
